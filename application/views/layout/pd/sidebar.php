@@ -17,22 +17,22 @@
                 <nav class="sidebar-nav">
                     <ul id="side-menu">
                         <li>
-                            <a class="active waves-effect" href="javascript:void(0);" aria-expanded="false"><i class="icon-screen-desktop fa-fw"></i> <span class="hide-menu"> Dashboard </span></a>
+                            <a class="active waves-effect" href="<?php echo base_url('index.php/pd/dashboard'); ?>" aria-expanded="false"><i class="icon-screen-desktop fa-fw"></i> <span class="hide-menu"> Dashboard </span></a>
                         </li>
                         <li>
-                            <a class="waves-effect" href="javascript:void(0);" aria-expanded="false"><i class="icon-notebook fa-fw"></i> <span class="hide-menu"> Program </span></a>
+                            <a class="waves-effect" href="<?php echo base_url('index.php/pd/program'); ?>" aria-expanded="false"><i class="icon-notebook fa-fw"></i> <span class="hide-menu"> Program </span></a>
                         </li>
                         <li>
-                            <a class="waves-effect" href="javascript:void(0);" aria-expanded="false"><i class="icon-envelope-letter fa-fw"></i> <span class="hide-menu"> Kegiatan </span></a>
+                            <a class="waves-effect" href="<?php echo base_url('index.php/pd/kegiatan'); ?>" aria-expanded="false"><i class="icon-envelope-letter fa-fw"></i> <span class="hide-menu"> Kegiatan </span></a>
                         </li>
                         <li>
                             <a class="waves-effect" href="javascript:void(0);" aria-expanded="false"><i class="icon-equalizer fa-fw"></i> <span class="hide-menu"> Laporan</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="panels-wells.html">Triwulan I</a></li>
-                                <li><a href="panel-ui-block.html">Triwulan II</a></li>
-                                <li><a href="portlet-draggable.html">Triwulan III</a></li>
-                                <li><a href="buttons.html">Triwulan IV</a></li>
-                                <li><a href="tabs.html">Print Laporan</a></li>
+                                <li><a href="<?php echo base_url('index.php/pd/laporan/tri_satu'); ?>">Triwulan I</a></li>
+                                <li><a href="<?php echo base_url('index.php/pd/laporan/tri_dua'); ?>">Triwulan II</a></li>
+                                <li><a href="<?php echo base_url('index.php/pd/laporan/tri_tiga'); ?>">Triwulan III</a></li>
+                                <li><a href="<?php echo base_url('index.php/pd/laporan/tri_empat'); ?>">Triwulan IV</a></li>
+                                <li><a href="<?php echo base_url('index.php/pd/laporan/print'); ?>">Print Laporan</a></li>
                             </ul>
                         </li>
                     </ul>

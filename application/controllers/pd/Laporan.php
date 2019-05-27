@@ -25,4 +25,45 @@ class Laporan extends CI_Controller {
 		$this->load->view('layout/pd/content.php');
 		$this->load->view('layout/pd/footer.php');	
 	}
+	
+	public function tri_satu()
+	{
+		$this->load->view('layout/pd/header.php');
+		$this->load->view('layout/pd/sidebar.php');
+		$this->load->view('layout/pd/content.php');
+		$this->load->view('layout/pd/footer.php');	
+	}
+	
+	public function tri_dua()
+	{
+		$this->load->view('layout/pd/header.php');
+		$this->load->view('layout/pd/sidebar.php');
+		$this->load->view('layout/pd/content.php');
+		$this->load->view('layout/pd/footer.php');	
+	}
+
+	public function tri_tiga()
+	{
+		$this->load->view('layout/pd/header.php');
+		$this->load->view('layout/pd/sidebar.php');
+		$this->load->view('layout/pd/content.php');
+		$this->load->view('layout/pd/footer.php');	
+	}
+	
+	public function tri_empat()
+	{
+		$this->load->view('layout/pd/header.php');
+		$this->load->view('layout/pd/sidebar.php');
+		$this->load->view('layout/pd/content.php');
+		$this->load->view('layout/pd/footer.php');	
+	}
+
+	public function print()
+	{
+		$this->load->view('layout/pd/header.php');
+		$this->load->view('layout/pd/sidebar.php');
+		$this->load->view('layout/pd/content.php');
+		$this->load->view('layout/pd/footer.php');	
+	}
+	
 }

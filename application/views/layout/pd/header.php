@@ -43,10 +43,10 @@
                 <div class="top-left-part">
                     <a class="logo" href="index.html">
                         <b>
-                            <img src="public/plugins/images/logo-icon.png" alt="home" />
+                            <img src="<?php echo base_url('public/plugins/images/logo-icon.png'); ?>" alt="home" />
                         </b>
                         <span>
-                            <img src="public/plugins/images/logo-light-text.png" alt="homepage" class="dark-logo" />
+                            <img src="<?php echo base_url('public/plugins/images/logo-light-text.png'); ?>" alt="homepage" class="dark-logo" />
                         </span>
                     </a>
                 </div>
@@ -62,7 +62,7 @@
                         </a>
                         <ul class="dropdown-menu mailbox animated bounceInDown">
                             <li>
-                                <a class="text-center" href="javascript:void(0);">
+                                <a class="text-center" href="<?php echo site_url('login/logout'); ?>">
                                     <i class="fa fa-angle-right"></i>
                                     <strong>Logout</strong>
                                 </a>
