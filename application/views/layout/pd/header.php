@@ -15,6 +15,10 @@
     <!-- ===== Plugin CSS ===== -->
     <link rel="stylesheet" href="<?php echo base_url('public/plugins/components/chartist-js/dist/chartist.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('public/plugins/components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css'); ?>">
+    <!-- ===== Plugin CSS ===== -->
+    <link href="<?php echo base_url('public/plugins/components/datatables/jquery.dataTables.min.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+
     <!-- ===== Animation CSS ===== -->
     <link rel="stylesheet" href="<?php echo base_url('public/css/animate.css'); ?>">
     <!-- ===== Custom CSS ===== -->
@@ -41,7 +45,7 @@
                     <i class="fa fa-bars"></i>
                 </a>
                 <div class="top-left-part">
-                    <a class="logo" href="index.html">
+                    <a class="logo" href="<?php echo base_url('index.php/pd/dashboard'); ?>">
                         <b>
                             <img src="<?php echo base_url('public/plugins/images/logo-icon.png'); ?>" alt="home" />
                         </b>

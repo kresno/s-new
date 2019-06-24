@@ -22,7 +22,7 @@ class Program extends CI_Controller {
 	{
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('layout/pd/content.php');
+		$this->load->view('pd//content.php');
 		$this->load->view('layout/pd/footer.php');	
 	}
 }
