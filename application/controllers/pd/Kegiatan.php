@@ -18,11 +18,21 @@ class Kegiatan extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->model('M_kegiatan');
+	}
+
+
 	public function index()
 	{
+		$data['kegiatan'] = $this->M_kegiatan->getAllById($id=1);
+
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('pd/kegiatan/index.php');
+		$this->load->view('pd/kegiatan/index.php', $data);
 		$this->load->view('layout/pd/footer.php');	
 	}
 

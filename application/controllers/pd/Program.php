@@ -18,11 +18,28 @@ class Program extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->model('M_program');
+	}
+
 	public function index()
+	{
+		$data['program'] = $this->M_program->getAllById($id=1);
+
+		$this->load->view('layout/pd/header.php');
+		$this->load->view('layout/pd/sidebar.php');
+		$this->load->view('pd/program/index.php', $data);
+		$this->load->view('layout/pd/footer.php');	
+	}
+
+	public function create()
 	{
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('pd//content.php');
-		$this->load->view('layout/pd/footer.php');	
+		$this->load->view('pd/program/create.php');
+		$this->load->view('layout/pd/footer.php');
 	}
 }
