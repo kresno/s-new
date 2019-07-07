@@ -23,6 +23,7 @@ class Program extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('M_program');
+		$this->load->model('M_indikatorsasaran');
 	}
 
 	public function index()
@@ -37,9 +38,12 @@ class Program extends CI_Controller {
 
 	public function create()
 	{
+		$data['program'] = $this->M_program->getAll();
+		$data['indikator_sasaran'] = $this->M_indikatorsasaran->getAll();
+
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('pd/program/create.php');
+		$this->load->view('pd/program/create.php', $data);
 		$this->load->view('layout/pd/footer.php');
 	}
 }

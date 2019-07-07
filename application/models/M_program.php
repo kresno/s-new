@@ -38,6 +38,18 @@ class M_program extends CI_Model
       return false;
     }
   }
+
+  public function getAll()
+  {
+    $this->db->select("id, nama");
+    $this->db->from("program");
+    $query = $this->db->get();
+    if ($query->num_rows() > 0){
+	    return $query->result();
+    } else {
+      return false;
+    }
+  }
 }
 
 ?>

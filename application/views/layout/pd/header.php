@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="<?php echo base_url('public/css/animate.css'); ?>">
     <!-- ===== Custom CSS ===== -->
     <link rel="stylesheet" href="<?php echo base_url('public/css/style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('public/css/select2.min.css'); ?>">
     <!-- ===== Color CSS ===== -->
     <link rel="stylesheet" href="<?php echo base_url('public/css/colors/green-dark.css'); ?>" id="theme">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

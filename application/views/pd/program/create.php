@@ -12,13 +12,19 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Program</label>
                                             <select id="program" name="program" class="form-control">
-                                                <option> --Silahkan Pilih-- </option>
+                                                <option value="none">------------Select Program------------</option>
+                                                <?php foreach($program as $program):?>
+                                                    <option value="<?php echo $program->id; ?>"><?php echo $program->nama; ?> </option>
+                                                <?php endforeach; ?>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Indikator Sasaran</label>
-                                            <select id="ind_sasaran" name="ind_sasaran" class="form-control">
-                                                <option> --Silahkan Pilih-- </option>
+                                            <select id="indikator_sasaran" name="indikator_sasaran" class="form-control">
+                                                <option value="none">------------Select Indikator Sasaran------------</option>
+                                                <?php foreach($indikator_sasaran as $indikator_sasaran):?>
+                                                    <option value="<?php echo $indikator_sasaran->id; ?>"><?php echo $indikator_sasaran->nama; ?> </option>
+                                                <?php endforeach; ?>
                                             </select>
                                         </div>
                                         <div class="form-group">

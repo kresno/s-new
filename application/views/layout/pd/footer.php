@@ -28,8 +28,20 @@
     <script src="<?php echo base_url('public/plugins/components/knob/jquery.knob.js'); ?>"></script>
     <script src="<?php echo base_url('public/plugins/components/easypiechart/dist/jquery.easypiechart.min.js'); ?>"></script>
     <script src="<?php echo base_url('public/js/db1.js'); ?>"></script>
-    <script src="<?php echo base_url('public/js/custom.js'); ?>"></script>
+    <script src="<?php echo base_url('public/js/select2.min.js'); ?>"></script>
     <script src="<?php echo base_url('public/plugins/components/datatables/jquery.dataTables.min.js'); ?>"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $("#program").select2({
+                placeholder: "Please Select"
+            });
+
+            $("#indikator_sasaran").select2({
+                placeholder: "Please Select"
+            });
+        });
+    </script>
     <script>
     $(function() {
         $('#myTable').DataTable();
