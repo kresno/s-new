@@ -30,7 +30,7 @@ class Laporan extends CI_Controller {
 	{
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('layout/pd/content.php');
+		$this->load->view('pd/laporan/create_satu.php');
 		$this->load->view('layout/pd/footer.php');	
 	}
 	
@@ -38,7 +38,7 @@ class Laporan extends CI_Controller {
 	{
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('layout/pd/content.php');
+		$this->load->view('pd/laporan/create_dua.php');
 		$this->load->view('layout/pd/footer.php');	
 	}
 
@@ -46,7 +46,7 @@ class Laporan extends CI_Controller {
 	{
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('layout/pd/content.php');
+		$this->load->view('pd/laporan/create_tiga.php');
 		$this->load->view('layout/pd/footer.php');	
 	}
 	
@@ -54,15 +54,20 @@ class Laporan extends CI_Controller {
 	{
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('layout/pd/content.php');
+		$this->load->view('pd/laporan/create_empat.php');
 		$this->load->view('layout/pd/footer.php');	
+	}
+
+	public function view_report()
+	{
+		$this->load->view('pd/laporan/print.php');
 	}
 
 	public function print()
 	{
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('layout/pd/content.php');
+		$this->load->view('pd/laporan/test_print.php');
 		$this->load->view('layout/pd/footer.php');	
 	}
 	
