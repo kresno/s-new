@@ -23,6 +23,7 @@ class Kegiatan extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('M_kegiatan');
+		$this->load->model('M_indikator_kegiatan');
 	}
 
 
@@ -42,5 +43,22 @@ class Kegiatan extends CI_Controller {
 		$this->load->view('layout/pd/sidebar.php');
 		$this->load->view('pd/kegiatan/create.php');
 		$this->load->view('layout/pd/footer.php');
+	}
+
+
+	public function output($id)
+	{
+		$data['kegiatan']= $this->M_kegiatan->getById($id);
+		$data['output']=$this->M_kegiatan->getOutputById($id);
+
+		$this->load->view('layout/pd/header.php');
+		$this->load->view('layout/pd/sidebar.php');
+		$this->load->view('pd/output/index.php',$data);
+		$this->load->view('layout/pd/footer.php');
+	}
+
+	public function doDelete($id)
+	{
+		
 	}
 }

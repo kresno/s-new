@@ -25,7 +25,10 @@
                                             <th><?php echo ++$count; ?></th>
                                             <th><?php echo $kegiatan->nama_program; ?></th>
                                             <th><?php echo $kegiatan->nama_kegiatan; ?></th>
-                                            <th><?php echo ++$count; ?></th>
+                                            <th>
+                                                <a href="<?php echo base_url().'index.php/pd/kegiatan/output/'.$kegiatan->id; ?>" class="btn btn-md btn-primary"><i class="mdi mdi-pencil"></i> Ouput </a>
+                                                <a href="<?php echo base_url().'index.php/pd/kegiatan/doDelete/'.$kegiatan->id; ?>" class="btn btn-md btn-waning"><i class="mdi mdi-delete-sweep"></i> Delete </a>
+                                            </th>
                                         </tr>
                                     <?php endforeach; } ?>
                                     </tbody>

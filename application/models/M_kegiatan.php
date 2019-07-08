@@ -38,6 +38,32 @@ class M_kegiatan extends CI_Model
     }
   }
 
+  public function getById($id)
+  {
+    $this->db->select("id, nama");
+    $this->db->from("kegiatan");
+    $this->db->where("id", $id);
+    $query = $this->db->get();
+    if ($query->num_rows() > 0){
+	    return $query->result();
+    } else {
+      return false;
+    }
+  }
+
+  public function getOutputById($id)
+  {
+    $this->db->select("id, tolak_ukur, satuan, ksatu, rsatu, kdua, rdua, ktiga, rtiga, kempat, rempat, klima, rlima, kenam, renam, ktujuh, rtujuh, ket");
+    $this->db->from("indikator_kegiatan");
+    $this->db->where("kegiatan_id", $id);
+    $query = $this->db->get();
+    if ($query->num_rows() > 0){
+	    return $query->result();
+    } else {
+      return false;
+    }
+  }
+
 
 }
 
