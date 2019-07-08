@@ -63,12 +63,12 @@ class Laporan extends CI_Controller {
 		$this->load->view('pd/laporan/print.php');
 	}
 
-	// public function print()
-	// {
-	// 	$this->load->view('layout/pd/header.php');
-	// 	$this->load->view('layout/pd/sidebar.php');
-	// 	$this->load->view('pd/laporan/test_print.php');
-	// 	$this->load->view('layout/pd/footer.php');	
-	// }
+	public function post_print()
+	{
+		$this->load->view('layout/pd/header.php');
+		$this->load->view('layout/pd/sidebar.php');
+		$this->load->view('pd/laporan/test_print.php');
+		$this->load->view('layout/pd/footer.php');	
+	}
 	
 }

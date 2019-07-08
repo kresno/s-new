@@ -32,7 +32,7 @@
                                 <li><a href="<?php echo base_url('index.php/pd/laporan/tri_dua'); ?>">Triwulan II</a></li>
                                 <li><a href="<?php echo base_url('index.php/pd/laporan/tri_tiga'); ?>">Triwulan III</a></li>
                                 <li><a href="<?php echo base_url('index.php/pd/laporan/tri_empat'); ?>">Triwulan IV</a></li>
-                                <li><a href="<?php echo base_url('index.php/pd/laporan/print'); ?>">Print Laporan</a></li>
+                                <li><a href="<?php echo base_url('index.php/pd/laporan/post_print'); ?>">Print Laporan</a></li>
                             </ul>
                         </li>
                     </ul>
