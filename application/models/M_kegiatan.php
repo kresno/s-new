@@ -39,7 +39,7 @@ class M_kegiatan extends CI_Model
   }
 
   public function getById($id)
-  {
+  { 
     $this->db->select("id, nama");
     $this->db->from("kegiatan");
     $this->db->where("id", $id);
@@ -62,6 +62,11 @@ class M_kegiatan extends CI_Model
     } else {
       return false;
     }
+  }
+
+  public function create($data)
+  {
+
   }
 
 

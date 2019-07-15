@@ -6,7 +6,7 @@
                     <div class="col-sm-12">
                         <?php foreach($kegiatan as $kegiatan):?>
                         <div class="pull-right">
-                            <a href="<?php echo base_url('index.php/pd/output/create/'.$kegiatan->id); ?>" class="btn btn-info waves-effect waves-light m-t-10">Tambah Data</a>
+                            <a href="<?php echo base_url('index.php/pd/kegiatan/output/create/'.$kegiatan->id); ?>" class="btn btn-info waves-effect waves-light m-t-10">Tambah Data</a>
                         </div>
                         <div class="white-box">
                             <h3 class="box-title m-b-0">Data Output Kegiatan :  
@@ -48,7 +48,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($output as $arr):?>
+
+                                        <?php if($output) foreach($output as $arr):?>
                                             <?php echo "<tr>"; ?>
                                             <?php echo "<td align='left'>".$arr->tolak_ukur."</td>"; ?>
                                             <?php echo "<td align='right'>".$arr->ksatu."</td>"; ?>

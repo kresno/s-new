@@ -45,6 +45,17 @@ class Kegiatan extends CI_Controller {
 		$this->load->view('layout/pd/footer.php');
 	}
 
+	public function store()
+	{
+		$data = array(
+			$this->input->post(''),
+
+		);
+
+		$this->M_kegiatan->create($data);
+
+	}
+
 
 	public function output($id)
 	{
@@ -57,6 +68,7 @@ class Kegiatan extends CI_Controller {
 		$this->load->view('layout/pd/footer.php');
 	}
 
+	
 	public function doDelete($id)
 	{
 		

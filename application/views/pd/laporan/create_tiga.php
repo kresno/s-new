@@ -22,12 +22,12 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="ktiga">Target Realisasi Kinerja Pada Triwulan III (dalam persen)</label>
-                                            <input type="number" class="form-control" id="ktiga" placeholder="Masukkan Perhitungan"> 
+                                            <label for="kenam">Target Realisasi Kinerja Pada Triwulan III (dalam persen)</label>
+                                            <input type="number" class="form-control" id="kenam" placeholder="Masukkan Perhitungan"> 
                                         </div>
                                         <div class="form-group">
-                                            <label for="rtiga">Pagu Realisasi Kinerja Pada Triwulan III</label>
-                                            <input type="number" class="form-control" id="rtiga" placeholder="Masukkan Perhitungan"> 
+                                            <label for="renam">Pagu Realisasi Kinerja Pada Triwulan III</label>
+                                            <input type="number" class="form-control" id="renam" placeholder="Masukkan Perhitungan"> 
                                         </div>
                                         <input type="submit" class="btn btn-success waves-effect waves-light m-r-10" value="submit">
                                     </form>

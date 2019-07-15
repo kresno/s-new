@@ -11,7 +11,7 @@
                                 </span>
                             </a>
                         </div>
-                        <p class="profile-text m-t-15 font-16"><a href="javascript:void(0);"> Hanna Gover</a></p>
+                        <p class="profile-text m-t-15 font-16"><a href="javascript:void(0);"> Pemerintah Kab. Sukabumi</a></p>
                     </div>
                 </div>
                 <nav class="sidebar-nav">
