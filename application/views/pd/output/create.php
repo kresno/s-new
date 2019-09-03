@@ -5,12 +5,12 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="white-box">
-                            <h3 class="box-title m-b-0">Laporan Triwulan IV</h3>
+                            <h3 class="box-title m-b-0">Tambah Output</h3>
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12">
-                                    <form action="<?php echo base_url()?>index.php/pd/laporan/post_tri/4" method="POST">
+                                    <form action="<?php echo base_url()?>index.php/pd/output/store" method="POST">
                                         <div class="form-group">
-                                            <label for="Kegiatan">Kegiatan</label>
+                                            <label for="exampleInputEmail1">Kegiatan</label>
                                             <select id="kegiatan" name="kegiatan" class="form-control" readonly>
                                                 <?php foreach($kegiatan as $kegiatan):?>
                                                     <option value="<?php echo $kegiatan->id; ?>"><?php echo $kegiatan->nama; ?> </option>
@@ -18,18 +18,12 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="Output">Output</label>
-                                            <select id="output" name="ouput" class="form-control">
-                                                <option> --Silahkan Pilih-- </option>
-                                            </select>
+                                            <label for="kegiatan">Nama Output</label>
+                                            <input type="text" class="form-control" name="output" id="output" placeholder="Nama Output"> 
                                         </div>
                                         <div class="form-group">
-                                            <label for="ktujuh">Target Realisasi Kinerja Pada Triwulan IV (dalam persen)</label>
-                                            <input type="number" class="form-control" id="ktujuh" placeholder="Masukkan Perhitungan"> 
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="rtujuh">Pagu Realisasi Kinerja Pada Triwulan IV</label>
-                                            <input type="number" class="form-control" id="rtujuh" placeholder="Masukkan Perhitungan"> 
+                                            <label for="kegiatan">Satuan</label>
+                                            <input type="text" class="form-control" name="satuan" id="satuan" placeholder="Satuan"> 
                                         </div>
                                         <input type="submit" class="btn btn-success waves-effect waves-light m-r-10" value="submit">
                                     </form>

@@ -17,7 +17,7 @@
                 <nav class="sidebar-nav">
                     <ul id="side-menu">
                         <li>
-                            <a class="active waves-effect" href="<?php echo base_url('index.php/pd/dashboard'); ?>" aria-expanded="false"><i class="icon-screen-desktop fa-fw"></i> <span class="hide-menu"> Dashboard </span></a>
+                            <a class="waves-effect" href="<?php echo base_url('index.php/pd/dashboard'); ?>" aria-expanded="false"><i class="icon-screen-desktop fa-fw"></i> <span class="hide-menu"> Dashboard </span></a>
                         </li>
                         <li>
                             <a class="waves-effect" href="<?php echo base_url('index.php/pd/program'); ?>" aria-expanded="false"><i class="icon-notebook fa-fw"></i> <span class="hide-menu"> Program </span></a>

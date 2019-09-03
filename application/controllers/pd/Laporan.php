@@ -18,44 +18,83 @@ class Laporan extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	function __construct()
 	{
-		$this->load->view('layout/pd/header.php');
-		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('layout/pd/content.php');
-		$this->load->view('layout/pd/footer.php');	
+		parent::__construct();
+		$this->load->library('Auth');
+		$this->load->model('M_kegiatan');
+		$this->load->model('M_indikator_kegiatan');
 	}
 	
 	public function tri_satu()
 	{
+		$admin_log = $this->auth->is_login_admin();
+		$data['kegiatan'] = $this->M_kegiatan->getAllById($admin_log['user_id']);
+
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('pd/laporan/create_satu.php');
+		$this->load->view('pd/laporan/create_satu.php', $data);
 		$this->load->view('layout/pd/footer.php');	
 	}
 	
 	public function tri_dua()
 	{
+		$admin_log = $this->auth->is_login_admin();
+		$data['kegiatan'] = $this->M_kegiatan->getAllById($admin_log['user_id']);
+
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('pd/laporan/create_dua.php');
+		$this->load->view('pd/laporan/create_dua.php', $data);
 		$this->load->view('layout/pd/footer.php');	
 	}
 
 	public function tri_tiga()
 	{
+		$admin_log = $this->auth->is_login_admin();
+		$data['kegiatan'] = $this->M_kegiatan->getAllById($admin_log['user_id']);
+
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('pd/laporan/create_tiga.php');
+		$this->load->view('pd/laporan/create_tiga.php', $data);
 		$this->load->view('layout/pd/footer.php');	
 	}
 	
 	public function tri_empat()
 	{
+		$admin_log = $this->auth->is_login_admin();
+		$data['kegiatan'] = $this->M_kegiatan->getAllById($admin_log['user_id']);
+
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('pd/laporan/create_empat.php');
+		$this->load->view('pd/laporan/create_empat.php', $data);
 		$this->load->view('layout/pd/footer.php');	
+	}
+
+	public function post_tri($id)
+	{
+		$data = array();
+		if($id==1){
+			$data['kempat'] = $this->input->post('kempat');
+			$data['rempat'] = $this->input->post('rempat');
+		}
+			else if($id==2){
+				$data['klima'] = $this->input->post('klima');
+				$data['rlima'] = $this->input->post('rlima');
+			}
+				else if($id==3){
+					$data['kenam'] = $this->input->post('kenam');
+					$data['renam'] = $this->input->post('renam');
+				} else
+					{
+						$data['ktujuh'] = $this->input->post('ktujuh');
+						$data['rtujuh'] = $this->input->post('rtujuh');
+					}
+		$response = $this->M_laporan->insert($data);
+		if($response)
+		{
+			redirect('pd/dashboard', 'refresh');
+		} 
+					
 	}
 
 	public function view_report()

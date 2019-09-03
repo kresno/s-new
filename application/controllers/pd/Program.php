@@ -22,13 +22,16 @@ class Program extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->library('Auth');
+		$this->load->model('M_trx_program');
 		$this->load->model('M_program');
 		$this->load->model('M_indikatorsasaran');
 	}
 
 	public function index()
 	{
-		$data['program'] = $this->M_program->getAllById($id=1);
+		$admin_log = $this->auth->is_login_admin();
+		$data['program'] = $this->M_program->getAllById($admin_log['user_id']);
 
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
@@ -45,5 +48,24 @@ class Program extends CI_Controller {
 		$this->load->view('layout/pd/sidebar.php');
 		$this->load->view('pd/program/create.php', $data);
 		$this->load->view('layout/pd/footer.php');
+	}
+
+	public function store()
+	{
+		$admin_log = $this->auth->is_login_admin();
+
+		$data = array();	
+		$data['program_id']=$this->input->post('program');
+		$data['indikator_id']=$this->input->post('indikator_sasaran');
+		$data['ksatu'] = $this->input->post('ksatu');
+		$data['kdua'] = $this->input->post('kdua');
+		$data['ktiga'] = $this->input->post('ktiga');
+		$data['user_id'] = $admin_log['user_id'];
+
+		$response = $this->M_trx_program->insert($data);
+		if($response){
+			redirect('pd/program', 'refresh');
+		}
+		
 	}
 }

@@ -8,11 +8,13 @@
                             <h3 class="box-title m-b-0">Laporan Triwulan II</h3>
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12">
-                                    <form>
+                                    <form action="<?php echo base_url()?>index.php/pd/laporan/post_tri/2" method="POST">
                                         <div class="form-group">
                                             <label for="Kegiatan">Kegiatan</label>
-                                            <select id="kegiatan" name="kegiatan" class="form-control">
-                                                <option> --Silahkan Pilih-- </option>
+                                            <select id="kegiatan" name="kegiatan" class="form-control" readonly>
+                                                <?php foreach($kegiatan as $kegiatan):?>
+                                                    <option value="<?php echo $kegiatan->id; ?>"><?php echo $kegiatan->nama; ?> </option>
+                                                <?php endforeach; ?>
                                             </select>
                                         </div>
                                         <div class="form-group">

@@ -9,7 +9,7 @@ class Login extends CI_Controller
   {
     parent::__construct();
     $this->load->model('M_users');
-    $this->load->library('auth');
+    $this->load->library('Auth');
   }
 
   public function validasi()

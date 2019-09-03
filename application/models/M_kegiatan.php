@@ -26,9 +26,9 @@ class M_kegiatan extends CI_Model
 
   public function getAllById($id)
   {
-    $this->db->select("a.id, a.nama as nama_kegiatan, b.nama as nama_program");
+    $this->db->select("a.id, a.nama as nama_kegiatan, b.nama as nama_indikator");
     $this->db->from("kegiatan a");
-    $this->db->join("program b", "a.trxprogram_id=b.id");
+    $this->db->join("indikator_sasaran b", "a.indikator_id=b.id");
     $this->db->where('a.user_id', $id);
     $query = $this->db->get();
     if ($query->num_rows() > 0){
@@ -64,11 +64,10 @@ class M_kegiatan extends CI_Model
     }
   }
 
-  public function create($data)
+  public function createOutput($data)
   {
-
+    return $this->db->insert("indikator_kegiatan", $data);
   }
-
 
 }
 

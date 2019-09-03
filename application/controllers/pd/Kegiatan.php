@@ -22,6 +22,8 @@ class Kegiatan extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->library('Auth');
+		$this->load->model('M_trx_program');
 		$this->load->model('M_kegiatan');
 		$this->load->model('M_indikator_kegiatan');
 	}
@@ -29,7 +31,8 @@ class Kegiatan extends CI_Controller {
 
 	public function index()
 	{
-		$data['kegiatan'] = $this->M_kegiatan->getAllById($id=1);
+		$admin_log = $this->auth->is_login_admin();
+		$data['kegiatan'] = $this->M_kegiatan->getAllById($admin_log['user_id']);
 
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
@@ -39,23 +42,31 @@ class Kegiatan extends CI_Controller {
 
 	public function create()
 	{
+		$admin_log = $this->auth->is_login_admin();
+		$data['indikator'] = $this->M_trx_program->getAllById($admin_log['user_id']);
+
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
-		$this->load->view('pd/kegiatan/create.php');
+		$this->load->view('pd/kegiatan/create.php', $data);
 		$this->load->view('layout/pd/footer.php');
 	}
 
 	public function store()
 	{
-		$data = array(
-			$this->input->post(''),
+		$admin_log = $this->auth->is_login_admin();
 
-		);
+		$data = array();	
+        $data['indikator_id']=$this->input->post('indikator_id');
+        $data['nama']=$this->input->post('kegiatan');		
+		$data['user_id'] = $admin_log['user_id'];
+		$response = $this->M_kegiatan->insert($data);
 
-		$this->M_kegiatan->create($data);
+		if($response)
+		{
+			redirect('pd/kegiatan', 'refresh');
+		} 
 
 	}
-
 
 	public function output($id)
 	{
@@ -71,6 +82,10 @@ class Kegiatan extends CI_Controller {
 	
 	public function doDelete($id)
 	{
-		
+		$response = $this->M_kegiatan->delete($id);
+		if($response)
+		{
+			redirect('pd/kegiatan', 'refresh');
+		} 
 	}
 }
