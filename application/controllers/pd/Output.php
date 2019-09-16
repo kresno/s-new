@@ -25,9 +25,11 @@ class Output extends CI_Controller {
 		$this->load->model('M_trx_program');
 		$this->load->model('M_kegiatan');
 		$this->load->model('M_indikator_kegiatan');
+		$this->load->model('M_Output');
 	}
 
-	public function create($id){
+	public function create($id)
+	{
         $data['kegiatan'] = $this->M_kegiatan->getById($id);
 
         $this->load->view('layout/pd/header.php');
@@ -48,6 +50,13 @@ class Output extends CI_Controller {
         {
             redirect('pd/kegiatan');
         }
-    }
+	}
+	
+	public function getOutputByKegId($id)
+	{
+		$data = array();
+		$data = $this->M_Output->getByKegId($id);
+		echo json_encode($data);
+	}
 
 }

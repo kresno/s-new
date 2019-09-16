@@ -13,7 +13,7 @@
                                             <label for="Kegiatan">Kegiatan</label>
                                             <select id="kegiatan" name="kegiatan" class="form-control" readonly>
                                                 <?php foreach($kegiatan as $kegiatan):?>
-                                                    <option value="<?php echo $kegiatan->id; ?>"><?php echo $kegiatan->nama; ?> </option>
+                                                    <option value="<?php echo $kegiatan->id; ?>"><?php echo $kegiatan->nama_kegiatan; ?> </option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>

@@ -32,6 +32,35 @@
     <script src="<?php echo base_url('public/plugins/components/datatables/jquery.dataTables.min.js'); ?>"></script>
     
     <script>
+        $(document).ready(function(){
+            $("#kegiatan").change(function(){
+                var keg_id = $(this).children("option:selected").val();
+                console.log(keg_id);
+                $.ajax({
+                    type : "GET",
+                    dataType : "JSON",
+                    url : "<?php echo base_url('pd/output/getOutputByKegId/')?>" + keg_id,
+                    success : function(response){
+
+                        // $("#output").empty().append('<option>-- Pilih Output --</option');
+                        var len = response.length;
+                        console.log(len);
+                        // for(var i=0; i<len; i++){
+                        //     var id = response[i].id;
+                        //     var nama_output = response[i].nama_output;
+
+                        //     var tr_str = '<option id=' + "output" + ' value=' + id + '>' + nama_output + '</option>';
+                        //     $("#output").append(tr_str);
+                        // } 
+                    }
+                });
+            });
+
+        });
+        </script>
+
+
+    <script>
         $(document).ready(function() {
             $("#program").select2({
                 placeholder: "Please Select"

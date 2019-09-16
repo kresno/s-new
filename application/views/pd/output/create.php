@@ -32,3 +32,19 @@
                         </div>
                     </div>
                 </div>
+
+                <script>
+                $(document).ready(function(){
+                    $("#kegiatan").change(function(){
+                        var keg_id = $(this).children("option:selected").val();
+			            $.ajax({
+                            type : "GET",
+                            dataType : "JSON",
+                            url : "<?php echo base_url('api/getOutputByKegId/')?>" + keg_id,
+                            success : function(response){
+                                
+                            }
+                        });
+                    })
+                });
+                </script>
