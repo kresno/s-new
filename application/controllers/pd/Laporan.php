@@ -23,6 +23,7 @@ class Laporan extends CI_Controller {
 		parent::__construct();
 		$this->load->library('Auth');
 		$this->load->model('M_kegiatan');
+		$this->load->model('M_laporan');
 		$this->load->model('M_indikator_kegiatan');
 	}
 	
@@ -73,27 +74,50 @@ class Laporan extends CI_Controller {
 	public function post_tri($id)
 	{
 		$data = array();
+		$output_id = $this->input->post('output');
 		if($id==1){
 			$data['kempat'] = $this->input->post('kempat');
 			$data['rempat'] = $this->input->post('rempat');
+			$response = $this->M_laporan->update($data, $output_id);
+			if($response)
+			{
+				redirect('pd/dashboard', 'refresh');
+			}
 		}
 			else if($id==2){
 				$data['klima'] = $this->input->post('klima');
 				$data['rlima'] = $this->input->post('rlima');
+				$response = $this->M_laporan->update($data, $output_id);
+				if($response)
+				{
+					redirect('pd/dashboard', 'refresh');
+				}
 			}
 				else if($id==3){
 					$data['kenam'] = $this->input->post('kenam');
 					$data['renam'] = $this->input->post('renam');
+					$response = $this->M_laporan->update($data, $output_id);
+					if($response)
+					{
+						redirect('pd/dashboard', 'refresh');
+					}
 				} else
 					{
 						$data['ktujuh'] = $this->input->post('ktujuh');
 						$data['rtujuh'] = $this->input->post('rtujuh');
+						$response = $this->M_laporan->update($data, $output_id);
+						if($response)
+						{
+							redirect('pd/dashboard', 'refresh');
+						}
 					}
-		$response = $this->M_laporan->insert($data);
-		if($response)
-		{
-			redirect('pd/dashboard', 'refresh');
-		} 
+		// $response = $this->M_laporan->update($data, $output_id);
+
+		// var_dump($data);
+		// if($response)
+		// {
+		// 	redirect('pd/dashboard', 'refresh');
+		// } 
 					
 	}
 

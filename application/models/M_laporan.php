@@ -11,17 +11,17 @@ class M_laporan extends CI_Model
 
   function insert($data)
   {
-    return $this->db->insert("kegiatan", $data);
+    return $this->db->insert("indikator_kegiatan", $data);
   }
 
   function update($data, $id)
   {
-    return $this->db->update("kegiatan", $data, array('id' => $id));
+    return $this->db->update("indikator_kegiatan", $data, array('id' => $id));
   }
 
   function delete($id)
   {
-	return $this->db->delete("kegiatan", array('id' => $id));
+	return $this->db->delete("indikator_kegiatan", array('id' => $id));
   }
 
 }

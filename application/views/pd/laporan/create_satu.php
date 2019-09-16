@@ -20,17 +20,17 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="Output">Output</label>
-                                            <select id="output" name="ouput" class="form-control">
+                                            <select id="output" name="output" class="form-control">
                                                 <option> -- Pilih Output -- </option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="kempat">Target Realisasi Kinerja Pada Triwulan I (dalam persen)</label>
-                                            <input type="number" class="form-control" id="kempat" placeholder="Masukkan Perhitungan"> 
+                                            <input type="number" class="form-control" id="kempat" placeholder="Masukkan Perhitungan" name="kempat"> 
                                         </div>
                                         <div class="form-group">
                                             <label for="rempat">Pagu Realisasi Kinerja Pada Triwulan I</label>
-                                            <input type="number" class="form-control" id="rempat" placeholder="Masukkan Perhitungan"> 
+                                            <input type="number" class="form-control" id="rempat" placeholder="Masukkan Perhitungan" name="rempat"> 
                                         </div>
                                         <input type="submit" class="btn btn-success waves-effect waves-light m-r-10" value="submit">
                                     </form>
