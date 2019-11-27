@@ -52,10 +52,6 @@ class M_trx_program extends CI_Model
     }
   }
 
-  public function edit()
-  {
-
-  }
 }
 
 ?>

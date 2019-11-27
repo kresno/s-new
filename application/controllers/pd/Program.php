@@ -68,4 +68,39 @@ class Program extends CI_Controller {
 		}
 		
 	}
+
+
+	public function edit($id)
+	{
+		$admin_log = $this->auth->is_login_admin();
+		$data = array();
+		$hasil = array();
+		
+		$data['user'] = $admin_log['user_id'];
+		$data['program'] = $id;
+		
+		$hasil['hasil'] = $this->M_program->getByProgramId($data);
+
+		$this->load->view('layout/pd/header.php');
+		$this->load->view('layout/pd/sidebar.php');
+		$this->load->view('pd/program/edit.php', $hasil);
+		$this->load->view('layout/pd/footer.php');
+	}
+
+	public function update($id)
+	{
+		$admin_log = $this->auth->is_login_admin();
+
+		$data = array();	
+		$data['ksatu'] = $this->input->post('ksatu');
+		$data['kdua'] = $this->input->post('kdua');
+		$data['ktiga'] = $this->input->post('ktiga');
+		$data['user_id'] = $admin_log['user_id'];
+
+		$response = $this->M_trx_program->update($data, $id);
+		if($response){
+			redirect('pd/program', 'refresh');
+		}
+		
+	}
 }

@@ -19,6 +19,7 @@
                                             <th>Target RPJMD 2016-2021</th>
                                             <th>Realisasi RKPD Tahun Lalu</th>
                                             <th>Target Kinerja RKPD Berjalan</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -30,6 +31,7 @@
                                             <th><?php echo $program->ksatu; ?></th>
                                             <th><?php echo $program->kdua; ?></th>
                                             <th><?php echo $program->ktiga; ?></th>
+                                            <th><a href="<?php echo base_url('index.php/pd/program/edit/'.$program->id); ?>" class="btn btn-info waves-effect waves-light m-t-10">Edit Data</a></th>
                                         </tr>
                                     <?php endforeach; } ?>
                                     </tbody>
