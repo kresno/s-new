@@ -123,6 +123,8 @@ class Laporan extends CI_Controller {
 
 	public function view_report()
 	{
+		$data = array();
+		
 		$this->load->view('pd/laporan/print.php');
 	}
 

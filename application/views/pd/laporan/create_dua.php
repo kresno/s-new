@@ -11,7 +11,8 @@
                                     <form action="<?php echo base_url()?>index.php/pd/laporan/post_tri/2" method="POST">
                                         <div class="form-group">
                                             <label for="Kegiatan">Kegiatan</label>
-                                            <select id="kegiatan" name="kegiatan" class="form-control" readonly>
+                                            <select id="kegiatan" name="kegiatan" class="form-control">
+                                            <option> -- Pilih Kegiatan -- </option>
                                                 <?php foreach($kegiatan as $kegiatan):?>
                                                     <option value="<?php echo $kegiatan->id; ?>"><?php echo $kegiatan->nama_kegiatan; ?> </option>
                                                 <?php endforeach; ?>

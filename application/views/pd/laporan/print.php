@@ -319,7 +319,118 @@
 
             </tbody>
         </table>
-        <p>&nbsp;</p>    
+        <?php 
+                $previous_progid='';
+                $previous_kegid='';
+                $previous_indid='';
+                $case=0;
+                foreach ($return_arr_prog as $data_prog) {
+                    if($previous_progid!=='' && $previous_progid !== $data_prog['id_prog']){
+                        foreach($return_arr_cap as $data_cap){
+                            if($data_cap['id_prog']==$previous_progid){
+                                echo "<tr bgcolor='red'>";
+                                echo "<td colspan=7 align='right'>Rata-Rata capaian Kinerja (%)</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".$data_cap['avg_ksatu']."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>&nbsp;</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".($data_cap['sum_rsatu']/1000)."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".$data_cap['avg_kdua']."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".($data_cap['sum_rdua']/1000)."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".$data_cap['avg_ktiga']."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".($data_cap['sum_rtiga']/1000)."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".$data_cap['avg_kempat']."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".($data_cap['sum_rempat']/1000)."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".$data_cap['avg_klima']."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".($data_cap['sum_rlima']/1000)."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".$data_cap['avg_kenam']."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".($data_cap['sum_renam']/1000)."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".$data_cap['avg_ktujuh']."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".($data_cap['sum_rtujuh']/1000)."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".($data_cap['avg_kempat']+$data_cap['avg_klima']+$data_cap['avg_kenam']+$data_cap['avg_ktujuh'])."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".(($data_cap['sum_rempat']+$data_cap['sum_rlima']+$data_cap['sum_renam']+$data_cap['sum_rtujuh'])/1000)."</td>";
+                                
+                                echo "<td style='height: 22px; width: 15px;'>&nbsp;</td>";
+                                echo "<td style='height: 22px; width: 15px;'>&nbsp;</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".($data_cap['avg_kempat']+$data_cap['avg_klima']+$data_cap['avg_kenam']+$data_cap['avg_ktujuh']+$data_cap['avg_kdua'])."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".(($data_cap['sum_rempat']+$data_cap['sum_rlima']+$data_cap['sum_renam']+$data_cap['sum_rtujuh']+$data_cap['sum_rdua'])/1000)."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".number_format(((($data_ind['kempat']+$data_ind['klima']+$data_ind['kenam']+$data_ind['ktujuh']+$data_ind['kdua'])/$data_ind['ksatu'])*100),2)."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".number_format(((($data_ind['rempat']+$data_ind['rlima']+$data_ind['renam']+$data_ind['rtujuh']+$data_ind['rdua'])/$data_ind['rsatu'])*100),2)."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>".$data_ind['nama_user']."</td>";
+                                echo "<td style='height: 22px; width: 15px;'>&nbsp;</td>";
+                                echo "</tr>";
+                            }
+                        }
+                        
+                    } else {
+
+                    }
+
+                    $previous_progid = $data_prog['id_prog'];
+                            echo "<tr>";
+                            echo "<td style='height: 22px; width: 24px;'>&nbsp;</td>";
+                            echo "<td style='height: 22px; width: 15px;'>04</td>";
+                            echo "<td style='height: 22px; width: 15px;'>01</td>";
+                            echo "<td style='height: 22px; width: 15px;'>".$data_prog['kode_prog']."</td>";
+                            echo "<td style='height: 22px; width: 15px;'>&nbsp;</td>";
+                            echo "<td style='height: 22px; width: 270px;'><b>".$data_prog['nama_prog']."</b></td>";
+                            echo "<td colspan=26>&nbsp;</td>";
+                            echo "</tr>";
+                    
+                    $count_keg=0;
+                    foreach($return_arr_keg as $data_keg) {
+                        $previous_kegid = $data_keg['id_keg'];
+                        if($data_keg['id_prog']==$previous_progid){
+                            ++$count_keg;
+                            // echo "<td>&nbsp;--</td>";
+                            // echo "<td>".$data_keg['nama_keg']."</td><br>";
+                            echo "<tr>";
+                            echo "<td style='height: 22px; width: 24px;'>&nbsp;</td>";
+                            echo "<td style='height: 22px; width: 15px;'>04</td>";
+                            echo "<td style='height: 22px; width: 15px;'>01</td>";
+                            echo "<td style='height: 22px; width: 15px;'>".$data_prog['kode_prog']."</td>";
+                            echo "<td style='height: 22px; width: 15px;'>".$count_keg."</td>";
+                            echo "<td style='height: 22px; width: 270px;'>".$data_keg['nama_keg']."</td>";
+                            echo "<td colspan=26>&nbsp;</td>";
+                            echo "</tr>";
+                        
+                            foreach($return_arr_ind as $data_ind) {
+                                    if($data_ind['id_keg']==$previous_kegid){
+                                        echo "<tr>";
+                                        echo "<td colspan=6>&nbsp;</td>";
+                                        echo "<td style='height: 22px; width: 237px;'>".$data_ind['tolak_ukur']."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".$data_ind['ksatu']."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".$data_ind['satuan']."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".($data_ind['rsatu']/1000)."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".$data_ind['kdua']."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".($data_ind['rdua']/1000)."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".$data_ind['ktiga']."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".($data_ind['rtiga']/1000)."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".$data_ind['kempat']."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".($data_ind['rempat']/1000)."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".$data_ind['klima']."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".($data_ind['rlima']/1000)."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".$data_ind['kenam']."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".($data_ind['renam']/1000)."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".$data_ind['ktujuh']."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".($data_ind['rtujuh']/1000)."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".($data_ind['kempat']+$data_ind['klima']+$data_ind['kenam']+$data_ind['ktujuh'])."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".(($data_ind['rempat']+$data_ind['rlima']+$data_ind['renam']+$data_ind['rtujuh'])/1000)."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".((($data_ind['kempat']+$data_ind['klima']+$data_ind['kenam']+$data_ind['ktujuh'])/$data_ind['ktiga'])*100)."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".((($data_ind['rempat']+$data_ind['rlima']+$data_ind['renam']+$data_ind['rtujuh'])/$data_ind['rtiga'])*100)."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".($data_ind['kempat']+$data_ind['klima']+$data_ind['kenam']+$data_ind['ktujuh']+$data_ind['kdua'])."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".(($data_ind['rempat']+$data_ind['rlima']+$data_ind['renam']+$data_ind['rtujuh']+$data_ind['rdua'])/1000)."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".number_format(((($data_ind['kempat']+$data_ind['klima']+$data_ind['kenam']+$data_ind['ktujuh']+$data_ind['kdua'])/$data_ind['ksatu'])*100),2)."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".number_format(((($data_ind['rempat']+$data_ind['rlima']+$data_ind['renam']+$data_ind['rtujuh']+$data_ind['rdua'])/$data_ind['rsatu'])*100),2)."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>".$data_ind['nama_user']."</td>";
+                                        echo "<td style='height: 22px; width: 15px;'>&nbsp;</td>";
+                                        echo "</tr>";
+                                    }
+                                }
+                        
+                            }
+                        }
+
+                }
+                ?>    
     
     </body>
 
