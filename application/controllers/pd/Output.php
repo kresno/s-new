@@ -25,7 +25,7 @@ class Output extends CI_Controller {
 		$this->load->model('M_trx_program');
 		$this->load->model('M_kegiatan');
 		$this->load->model('M_indikator_kegiatan');
-		$this->load->model('M_Output');
+		$this->load->model('m_output');
 	}
 
 	public function create($id)
