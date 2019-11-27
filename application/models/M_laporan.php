@@ -61,6 +61,11 @@ class M_laporan extends CI_Model
                 WHERE c.`user_id`=$id
                 GROUP BY c.`id`";
   }
+
+  public function edit()
+  {
+
+  }
 }
 
 ?>

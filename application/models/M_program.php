@@ -51,6 +51,11 @@ class M_program extends CI_Model
       return false;
     }
   }
+
+  public function edit()
+  {
+
+  }
 }
 
 ?>

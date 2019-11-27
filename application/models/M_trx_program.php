@@ -51,6 +51,11 @@ class M_trx_program extends CI_Model
       return false;
     }
   }
+
+  public function edit()
+  {
+
+  }
 }
 
 ?>

@@ -38,6 +38,11 @@ class M_output extends CI_Model
     }
   }
 
+  public function edit()
+  {
+
+  }
+
 }
 
 ?>

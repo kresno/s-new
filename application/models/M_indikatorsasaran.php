@@ -36,6 +36,11 @@ class M_indikatorsasaran extends CI_Model
       return false;
     }
   }
+
+  public function edit()
+  {
+
+  }
 }
 
 ?>

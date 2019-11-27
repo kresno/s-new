@@ -36,6 +36,11 @@ class M_indikator_kegiatan extends CI_Model
       return false;
     }
   }
+
+  public function edit()
+  {
+
+  }
 }
 
 ?>

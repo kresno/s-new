@@ -36,7 +36,12 @@ class M_users extends CI_Model
 
   function delete($id){
 		return $this->db->delete("users", array('id' => $id));
-	}
+  }
+  
+  public function edit()
+  {
+
+  }
 
 
 }

@@ -8,6 +8,7 @@ class M_kegiatan extends CI_Model
   function __construct()
   {
     parent::__construct();
+
   }
 
   function insert($data)
@@ -68,6 +69,11 @@ class M_kegiatan extends CI_Model
   public function createOutput($data)
   {
     return $this->db->insert("indikator_kegiatan", $data);
+  }
+
+  public function edit()
+  {
+
   }
 
 }
