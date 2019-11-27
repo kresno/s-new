@@ -7,6 +7,7 @@ class M_users extends CI_Model
 
   function __construct()
   {
+    parent::__construct();
   }
 
   function checkAkun($username, $password)

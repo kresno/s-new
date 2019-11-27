@@ -7,6 +7,7 @@ class M_indikator_kegiatan extends CI_Model
 
   function __construct()
   {
+    parent::__construct();
   }
 
   function insert($data)
