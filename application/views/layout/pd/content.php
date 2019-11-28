@@ -7,7 +7,7 @@
                             <span class="icoleaf bg-primary text-white"><i class="mdi mdi-checkbox-marked-circle-outline"></i></span>
                         </div>
                         <div class="media-body">
-                            <h3 class="info-count text-blue">154</h3>
+                            <h3 class="info-count text-blue">-</h3>
                             <p class="info-text font-12">Total Program</p>
                             <span class="hr-line"></span>
                         </div>
@@ -19,7 +19,7 @@
                             <span class="icoleaf bg-primary text-white"><i class="mdi mdi-comment-text-outline"></i></span>
                         </div>
                         <div class="media-body">
-                            <h3 class="info-count text-blue">68</h3>
+                            <h3 class="info-count text-blue">-</h3>
                             <p class="info-text font-12">Total Kegiatan</p>
                             <span class="hr-line"></span>
                         </div>
@@ -31,7 +31,7 @@
                             <span class="icoleaf bg-primary text-white"><i class="mdi mdi-coin"></i></span>
                         </div>
                         <div class="media-body">
-                            <h3 class="info-count text-blue">9475</h3>
+                            <h3 class="info-count text-blue">-</h3>
                             <p class="info-text font-12">Total Indikator</p>
                             <span class="hr-line"></span>
                         </div>
