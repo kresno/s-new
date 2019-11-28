@@ -44,6 +44,7 @@ class M_trx_program extends CI_Model
     $this->db->select("distinct(b.id), b.nama as nama_indikator");
     $this->db->from("trx_program a");
     $this->db->join('indikator_sasaran b', 'b.id=a.indikator_id');
+    $this->db->where('a.user_id', $id);
     $query = $this->db->get();
     if ($query->num_rows() > 0){
 	    return $query->result();
