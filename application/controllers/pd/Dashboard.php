@@ -22,14 +22,13 @@ class Dashboard extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('Auth');
-		// $this->load->model('M_dashboard');
+		$this->load->model('M_dashboard');
 	}
 
 	public function index()
 	{
 		$admin_log = $this->auth->is_login_admin();
-		
-		// $data = array();
+
 		// $data['program'] = $this->M_dashboard->getCountProgram($admin_log['user_id']);
 		// $data['kegiatan'] = $this->M_dashboard->getCountKegiatan($admin_log['user_id']);
 		// $data['indikator'] = $this->M_dashboard->getCountIndikator($admin_log['user_id']);
@@ -37,6 +36,8 @@ class Dashboard extends CI_Controller {
 		$this->load->view('layout/pd/header.php');
 		$this->load->view('layout/pd/sidebar.php');
 		$this->load->view('layout/pd/content.php');
-		$this->load->view('layout/pd/footer.php');	
+		$this->load->view('layout/pd/footer.php');
+		
+		
 	}
 }

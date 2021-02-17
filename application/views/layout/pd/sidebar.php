@@ -25,17 +25,12 @@
                         <li>
                             <a class="waves-effect" href="<?php echo base_url('index.php/pd/kegiatan'); ?>" aria-expanded="false"><i class="icon-envelope-letter fa-fw"></i> <span class="hide-menu"> Kegiatan </span></a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a class="waves-effect" href="javascript:void(0);" aria-expanded="false"><i class="icon-equalizer fa-fw"></i> <span class="hide-menu"> Laporan</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="<?php echo base_url('index.php/pd/laporan/tri_satu'); ?>">Triwulan I</a></li>
-                                <!-- <li><a href="<?php echo base_url('index.php/pd/laporan/tri_satu'); ?>">Triwulan I</a></li>
-                                <li><a href="<?php echo base_url('index.php/pd/laporan/tri_dua'); ?>">Triwulan II</a></li>
-                                <li><a href="<?php echo base_url('index.php/pd/laporan/tri_tiga'); ?>">Triwulan III</a></li>
-                                <li><a href="<?php echo base_url('index.php/pd/laporan/tri_empat'); ?>">Triwulan IV</a></li>
-                                <li><a href="<?php echo base_url('index.php/pd/laporan/post_print'); ?>">Print Laporan</a></li> -->
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
             </div>

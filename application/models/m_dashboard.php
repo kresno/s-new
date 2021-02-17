@@ -12,10 +12,9 @@ class M_dashboard extends CI_Model
 
   public function getCountProgram($id)
   {
-    $this->db->select("count(a.program_id) as count");
-    $this->db->from("trx_program a");
-    $this->db->where('a.user_id', $id);
-    $this->db->group_by("a.program_id");
+    $this->db->select("count(distinct(program_id)) as count");
+    $this->db->from("trx_program");
+    $this->db->where('user_id', $id);
     $query = $this->db->get();
     if ($query->num_rows() > 0){
 	    return $query->result();
@@ -26,10 +25,9 @@ class M_dashboard extends CI_Model
 
   public function getCountIndikator($id)
   {
-    $this->db->select("count(a.indikator_id) as count");
+    $this->db->select("count(distinct(indikator_id)) as count");
     $this->db->from("trx_program a");
-    $this->db->where('a.user_id', $id);
-    $this->db->group_by("a.indikator_id");
+    $this->db->where('user_id', $id);
     $query = $this->db->get();
     if ($query->num_rows() > 0){
 	    return $query->result();
@@ -40,9 +38,9 @@ class M_dashboard extends CI_Model
 
   public function getCountKegiatan($id)
   {
-    $this->db->select("count(a.id) as count");
-    $this->db->from("kegiatan a");
-    $this->db->where('a.user_id', $id);
+    $this->db->select("count(distinct(id)) as count");
+    $this->db->from("kegiatan");
+    $this->db->where('user_id', $id);
     $query = $this->db->get();
     if ($query->num_rows() > 0){
 	    return $query->result();

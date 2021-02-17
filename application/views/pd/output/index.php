@@ -69,6 +69,8 @@
                                             <?php echo "<td align='right'>".number_format($arr->rtujuh/1000)."</td>"; ?>
                                             <?php echo "</tr>"; ?>
                                         <?php endforeach; ?>
+
+                                        
                                     </tbody>
                                 </table>
                             </div>
