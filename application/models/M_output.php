@@ -22,7 +22,7 @@ class M_output extends CI_Model
 
   function delete($id)
   {
-	return $this->db->delete("output", array('id' => $id));
+	  return $this->db->delete("indikator_kegiatan", array('id' => $id));
   }
 
   function getByKegId($id)

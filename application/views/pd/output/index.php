@@ -49,29 +49,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
                                         <?php if($output) foreach($output as $arr):?>
                                             <?php echo "<tr>"; ?>
-                                            <?php echo "<td align='left'>".$arr->tolak_ukur."</td>"; ?>
-                                            <?php echo "<td align='right'>".$arr->ksatu."</td>"; ?>
-                                            <?php echo "<td align='center'>".$arr->satuan."</td>"; ?>
-                                            <?php echo "<td align='right'>".number_format($arr->rsatu/1000)."</td>"; ?>
-                                            <?php echo "<td align='right'>".$arr->kdua."</td>"; ?>
-                                            <?php echo "<td align='right'>".number_format($arr->rdua/1000)."</td>"; ?>
-                                            <?php echo "<td align='right'>".$arr->ktiga."</td>"; ?>
-                                            <?php echo "<td align='right'>".number_format($arr->rtiga/1000)."</td>"; ?>
-                                            <?php echo "<td align='right'>".$arr->kempat."</td>"; ?>
-                                            <?php echo "<td align='right'>".number_format($arr->rempat/1000)."</td>"; ?>
-                                            <?php echo "<td align='right'>".$arr->klima."</td>"; ?>
-                                            <?php echo "<td align='right'>".number_format($arr->rlima/1000)."</td>"; ?>
-                                            <?php echo "<td align='right'>".$arr->kenam."</td>"; ?>
-                                            <?php echo "<td align='right'>".number_format($arr->renam/1000)."</td>"; ?>
-                                            <?php echo "<td align='right'>".$arr->ktujuh."</td>"; ?>
-                                            <?php echo "<td align='right'>".number_format($arr->rtujuh/1000)."</td>"; ?>
+                                                <?php echo "<td align='left'>".$arr->tolak_ukur."</td>"; ?>
+                                                <?php echo "<td align='right'>".$arr->ksatu."</td>"; ?>
+                                                <?php echo "<td align='center'>".$arr->satuan."</td>"; ?>
+                                                <?php echo "<td align='right'>".number_format($arr->rsatu/1000)."</td>"; ?>
+                                                <?php echo "<td align='right'>".$arr->kdua."</td>"; ?>
+                                                <?php echo "<td align='right'>".number_format($arr->rdua/1000)."</td>"; ?>
+                                                <?php echo "<td align='right'>".$arr->ktiga."</td>"; ?>
+                                                <?php echo "<td align='right'>".number_format($arr->rtiga/1000)."</td>"; ?>
+                                                <?php echo "<td align='right'>".$arr->kempat."</td>"; ?>
+                                                <?php echo "<td align='right'>".number_format($arr->rempat/1000)."</td>"; ?>
+                                                <?php echo "<td align='right'>".$arr->klima."</td>"; ?>
+                                                <?php echo "<td align='right'>".number_format($arr->rlima/1000)."</td>"; ?>
+                                                <?php echo "<td align='right'>".$arr->kenam."</td>"; ?>
+                                                <?php echo "<td align='right'>".number_format($arr->renam/1000)."</td>"; ?>
+                                                <?php echo "<td align='right'>".$arr->ktujuh."</td>"; ?>
+                                                <?php echo "<td align='right'>".number_format($arr->rtujuh/1000)."</td>"; ?>
+                                                <th><a href="<?php echo base_url('index.php/pd/output/hapus/'.$arr->id); ?>" class="btn btn-warning waves-effect waves-light m-t-10">Hapus Data</a></th>
                                             <?php echo "</tr>"; ?>
                                         <?php endforeach; ?>
-
-
                                     </tbody>
                                 </table>
                             </div>
