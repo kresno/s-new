@@ -3,6 +3,7 @@
             <div class="container-fluid">
                 <!-- /row -->
                 <div class="row">
+                <h3 class="box-title m-b-0">Data Tahun 2020</h3>   
                     <div class="col-sm-12">
                         <?php foreach($kegiatan as $kegiatan):?>
                         <div class="pull-right">
@@ -70,7 +71,7 @@
                                             <?php echo "</tr>"; ?>
                                         <?php endforeach; ?>
 
-                                        
+
                                     </tbody>
                                 </table>
                             </div>

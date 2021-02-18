@@ -3,6 +3,7 @@
             <div class="container-fluid">
                 <!-- /row -->
                 <div class="row">
+                    <h3 class="box-title m-b-0">Data Tahun 2020</h3>   
                     <div class="col-sm-12">
                         <div class="pull-right">
                             <a href="<?php echo base_url('index.php/pd/program/create'); ?>" class="btn btn-info waves-effect waves-light m-t-10">Tambah Data</a>
